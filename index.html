@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Performance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Link for a charting library, e.g., Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">Dashboard</div>
+            <nav class="navigation">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> Reports</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>SALES PERFORMANCE DASHBOARD</h1>
+                <div class="header-actions">
+                    <input type="text" placeholder="Search..." class="search-bar">
+                    <button class="profile-btn"><i class="fas fa-user-circle"></i></button>
+                </div>
+            </header>
+
+            <section class="kpi-cards">
+                <div class="card kpi-card">
+                    <p>TOTAL REVENUE</p>
+                    <h2>£2.5M</h2>
+                </div>
+                <div class="card kpi-card">
+                    <p>PROFIT</p>
+                    <h2>£850K</h2>
+                </div>
+                <div class="card kpi-card">
+                    <p>GROWTH (YoY)</p>
+                    <h2>15%</h2>
+                </div>
+            </section>
+
+            <section class="charts-and-filters">
+                <div class="card chart-card">
+                    <h3>Quarterly Sales Trend</h3>
+                    <div class="filters">
+                        <label>FILTERS:</label>
+                        <select id="year-filter">
+                            <option value="all">ALL</option>
+                            <option value="2023" selected>2023</option>
+                            <!-- More years dynamically -->
+                        </select>
+                        <select id="region-filter">
+                            <option value="all">ALL</option>
+                            <option value="south">South</option>
+                            <!-- More regions dynamically -->
+                        </select>
+                        <select id="product-type-filter">
+                            <option value="all">ALL</option>
+                            <option value="a">A</option>
+                            <!-- More product types dynamically -->
+                        </select>
+                    </div>
+                    <canvas id="salesTrendChart"></canvas>
+                </div>
+            </section>
+
+            <section class="bottom-panels">
+                <div class="card sales-by-product">
+                    <h3>Sales by Product Type</h3>
+                    <canvas id="salesByProductChart"></canvas>
+                </div>
+                <div class="card top-customers">
+                    <h3>Top 5 Customers</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer Name</th>
+                                <th>Sales</th>
+                                <th>Profit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data populated by JavaScript -->
+                            <tr><td>Customer 1</td><td>$10k</td><td>10%</td></tr>
+                            <tr><td>Customer 2</td><td>$8k</td><td>8%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+</body>
+</html>
